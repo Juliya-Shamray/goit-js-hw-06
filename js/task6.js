@@ -5,8 +5,7 @@ const validateInput = document.querySelector('#validation-input');
 validateInput.addEventListener('input', onSymbolInput);
 
 function onSymbolInput() {
-  if (validateInput.value.length > validateInput.dataset.length) {
-    console.log(validateInput.value.length);
-    validateInput.classList.add('invalid');
-  } else validateInput.classList.replace('invalid', 'valid');
+  validateInput.value.length > validateInput.dataset.length
+    ? validateInput.classList.add('invalid')
+    : validateInput.classList.replace('invalid', 'valid');
 }
