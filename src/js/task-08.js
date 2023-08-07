@@ -11,16 +11,14 @@ loginForm.addEventListener('submit', onSubmitLoginForm);
 
 function onSubmitLoginForm(event) {
   event.preventDefault();
+  const { email, password } = event.currentTarget.elements;
 
-  if (
-    loginForm.elements.email.value === '' ||
-    loginForm.elements.password.value === ''
-  ) {
+  if (email.value === '' || password.value === '') {
     alert('all fields must be filled');
   } else {
     console.log({
-      email: loginForm.elements.email.value,
-      password: loginForm.elements.password.value,
+      email: email.value,
+      password: password.value,
     });
     loginForm.reset();
   }
