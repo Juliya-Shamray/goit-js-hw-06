@@ -24,20 +24,18 @@ buttonCreate.addEventListener('click', onButtonCreate);
 buttonDestroy.addEventListener('click', onButtonDestroy);
 
 function onButtonCreate() {
-  let amountBox = inputEl.value;
-  createBoxes(amountBox);
+  createBoxes(inputEl.value);
 }
 
 function createBoxes(num) {
-  let box;
-
   let newBoxes = [];
-  for (let i = 1, j = 30; i <= num; i += 1, j += 10) {
-    box = document.createElement('div');
-    box.style.width = `${j}px`;
-    box.style.height = `${j}px`;
+  let defaultSize = 30;
+  for (let i = 0; i < num; i += 1) {
+    defaultSize += 10;
+    const box = document.createElement('div');
+    box.style.width = `${defaultSize}px`;
+    box.style.height = `${defaultSize}px`;
     box.style.background = getRandomHexColor();
-
     newBoxes.push(box);
   }
 

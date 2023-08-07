@@ -17,11 +17,11 @@ function onSubmitLoginForm(event) {
     loginForm.elements.password.value === ''
   ) {
     alert('all fields must be filled');
+  } else {
+    console.log({
+      email: loginForm.elements.email.value,
+      password: loginForm.elements.password.value,
+    });
+    loginForm.reset();
   }
-  console.log({
-    email: loginForm.elements.email.value,
-    password: loginForm.elements.password.value,
-  });
-  loginForm.elements.email.value = '';
-  loginForm.elements.password.value = '';
 }

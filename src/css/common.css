@@ -42,6 +42,7 @@ button {
 
 #validation-input {
   border: 3px solid #bdbdbd;
+  outline: none;
 }
 
 #validation-input.valid {
