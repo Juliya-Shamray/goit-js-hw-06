@@ -23,13 +23,15 @@ const boxes = document.querySelector('#boxes');
 buttonCreate.addEventListener('click', onButtonCreate);
 buttonDestroy.addEventListener('click', onButtonDestroy);
 
+let defaultSize = 30;
+
 function onButtonCreate() {
   createBoxes(inputEl.value);
 }
 
 function createBoxes(num) {
   let newBoxes = [];
-  let defaultSize = 30;
+
   for (let i = 0; i < num; i += 1) {
     defaultSize += 10;
     const box = document.createElement('div');
@@ -45,4 +47,5 @@ function createBoxes(num) {
 function onButtonDestroy() {
   boxes.innerHTML = '';
   inputEl.value = '';
+  defaultSize = 30;
 }

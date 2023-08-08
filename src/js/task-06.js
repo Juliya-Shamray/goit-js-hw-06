@@ -6,7 +6,8 @@ validateInput.addEventListener('input', onSymbolInput);
 
 function onSymbolInput() {
   validateInput.classList.add('valid');
-  if (validateInput.value.length > validateInput.dataset.length) {
+
+  if (validateInput.value.length !== Number(validateInput.dataset.length)) {
     validateInput.classList.add('invalid');
   } else {
     validateInput.classList.replace('invalid', 'valid');
